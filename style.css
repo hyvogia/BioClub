@@ -1,0 +1,336 @@
+@charset "asmo-708";
+/* CSS Document */ 
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#main {
+    background: url(green_ferns.jpg) no-repeat;
+    background-size: cover;
+    padding:20px 0;
+    width: 100%;
+    margin:0 auto;
+    height: 400px;
+}
+
+#nav {
+    font-family: Verdana;
+    font-size:14px;
+    list-style:none;
+    margin:0 auto;
+    padding:0;
+    width:455px;
+    overflow: auto;
+    position: relative;
+    top: 350px;
+    left: 7%;
+    
+}
+
+ul#nav li {
+    display:inline;
+}
+
+ul#nav li a {
+    text-decoration:none;
+    display: block;
+    padding:20px 40px;
+    background:#234f00;
+    color:#eee;
+    float:left;
+    text-align:center;
+    border-top:2px solid #65844d;
+    border-right:2px solid #65844d;
+    border-bottom:2px solid #65844d;
+    border-left:2px solid #65844d;
+}
+
+ul#nav li a:hover {
+    background:#234f00;
+    color:#000;
+    border-top:2px solid #65844d;
+    border-right:2px solid #65844d;
+    border-bottom:2px solid #65844d;
+    border-left:2px solid #65844d;
+}
+
+#title h1 {
+    font-family: Vardana, Geneva, arial, sans-serif;
+    font-size: 60px;
+    color: white;
+    font-weight: 400;
+    position: relative;
+    text-align: center;
+    border-top-color: white;
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-bottom-color: white;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-top: -330px;
+}
+
+#top {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+    left: 180px;
+    top: 200px;
+    border:2px solid #65844d;
+}
+
+#top h1 {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: underline;
+    font-family: Vardana, Geneva, arial, sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+#side ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+    left: 180px;
+    top: 200px;
+    border:2px solid #65844d;
+}
+
+#side li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: Vardana, Geneva, arial, sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+/* Change the link color on hover */
+#side li a:hover {
+    background-color: #67a71c;
+    color: black;
+}
+
+#top2 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+    left: 180px;
+    top: 200px;
+    border:2px solid #65844d;
+}
+
+#top2 h1 {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: underline;
+    font-family: Vardana, Geneva, arial, sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+#side2 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+    left: 180px;
+    top: 200px;
+    border:2px solid #65844d;
+}
+
+#side2 li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: Vardana, Geneva, arial, sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+/* Change the link color on hover */
+#side2 li a:hover {
+    background-color: #67a71c;
+    color: black;
+}
+
+#top3 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+    left: 180px;
+    top: 200px;
+    border:2px solid #65844d;
+}
+
+#top3 h1 {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: underline;
+    font-family: Vardana, Geneva, arial, sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+#side3 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+    left: 180px;
+    top: 200px;
+    border:2px solid #65844d;
+}
+
+#side3 li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: Vardana, Geneva, arial, sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+/* Change the link color on hover */
+#side3 li a:hover {
+    background-color: #67a71c;
+    color: black;
+}
+
+#text {
+    font-family: Comic Sans MS, sans-serif;
+    font-weight: 400;
+    color: black;
+    background-color: #eff0f1;
+    text-align: left;
+    padding: 20px;
+    margin-top: -600px;
+    margin-right: 180px;
+    margin-left: 400px;
+}
+
+#text h1 {
+    font-family: Comic Sans MS, sans-serif;
+    font-weight: 0;
+    color: black;
+    font-size: 25px;
+    padding-top: 20px;
+    text-decoration: underline;
+}
+
+#text h2 {
+    font-family: Comic Sans MS, sans-serif;
+    font-weight: 0;
+    color: black;
+    font-size: 15px;
+}
+
+#text strong {
+    font-family: Comic Sans MS, sans-serif;
+    font-weight: 0;
+    color: black;
+}
+
+#text ol {
+    padding-left: 30px;
+}
+#text ul {
+    padding-left: 30px;
+}
+
+#text h3 {
+    font-family: Comic Sans MS, sans-serif;
+    font-weight: 0;
+    color: black;
+    padding-top: -20px;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+#bio {
+    font-family: Comic Sans MS, sans-serif;
+    font-weight: 400;
+    color: black;
+    background-color: #eff0f1;
+    text-align: left;
+    padding: 20px;
+    margin-top: 200px;
+    margin-right: 180px;
+    margin-left: 180px;
+}
+
+#bio2 {
+    font-family: Comic Sans MS, sans-serif;
+    font-weight: 400;
+    color: black;
+    background-color: #eff0f1;
+    text-align: left;
+    padding: 20px;
+    margin-top: 200px;
+    margin-right: 180px;
+    margin-left: 180px;
+}
+
+#calculate {
+    font-family: Comic Sans MS, sans-serif;
+    font-weight: 400;
+    color: black;
+    background-color: #eff0f1;
+    text-align: left;
+    padding: 20px;
+    margin-top: 330px;
+    margin-right: 180px;
+    margin-left: 180px;
+}
+
+#calender figure{
+    margin: 10px 5px 10px 5px;
+    padding: 5px 0 5px 0;
+    border-top: 1px dotted grey;
+    border-bottom: 1px dotted grey;
+    color: grey;
+    text-align: center;
+}
+
+footer {
+    background-color: #234f00;
+    background-position: center;
+    text-align: center;
+    padding: 10px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    font-family: Vardana, Geneva, arial, sans-serif;
+    font-weight: 400;
+    color: white;
+    margin-top: 10px;
+}
+
+html {
+    min-width: 1110px;
+}
