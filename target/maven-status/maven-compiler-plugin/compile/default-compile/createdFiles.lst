@@ -1,0 +1,6 @@
+com/hy/BioClub/service/GameService.class
+com/hy/BioClub/BioClubApplication.class
+com/hy/BioClub/config/WebConfig.class
+com/hy/BioClub/model/LeaderboardEntry.class
+com/hy/BioClub/repository/LeaderboardRepository.class
+com/hy/BioClub/controller/HomeController.class

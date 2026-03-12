@@ -1,0 +1,380 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+/* CSS Document */ 
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    background: url('/img/wooden%20ceiling.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;  
+}
+
+/* Use Montserrat site-wide */
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Inline styles moved from index.html */
+/* Shuffle visual */
+#cardDisplay .card { transition: transform 160ms ease, opacity 160ms ease; backface-visibility: hidden; }
+#cardDisplay.shuffling .card { transform: rotateY(10deg) scale(1.02); opacity: 0.85; }
+#cardDisplay.previewing .card { transform: translateY(-6px) scale(1.01); }
+/* Fade-in-up animation for hero column */
+.fade-in-up { opacity: 0; transform: translateY(12px); animation: fadeInUp 1000ms ease forwards; }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Navbar styling: use Bootstrap 5 classes (navbar-dark + bg-dark) in the template; avoid custom overrides here */
+/* Override Bootstrap bg-dark to use the original site color */
+.navbar.bg-dark {
+    background-color: #234f00 !important;
+}
+.navbar-brand, .navbar .nav-link {
+    color: #fff !important;
+}
+.navbar-brand:hover, .navbar .nav-link:hover {
+    color: #67a71c !important;
+}
+
+#box1 {
+	height: 40vh;
+    width: 100%;
+    background-image: url('/img/plants.jpg');
+    background-size: cover;
+    display: table;
+}
+
+#box1 h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    color: white;
+    margin: 0px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+
+#box1 p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: white;
+    margin: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#box2 {
+    height: 500px;
+    width: 100%;
+    background-color: white;
+    display: table;
+}
+
+#box2 p1 {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#box2 p3 {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#box2 h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#box2 p2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+/* Designs for the title */
+#title h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    color: white;
+    font-weight: 400;
+    position: relative;
+    text-align: center;
+    top: -210px;
+    border-top-color: white;
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-bottom-color: white;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#page {
+    left: 10%;
+    right: 10%;
+    top: 0;
+    bottom: 0;
+}
+
+
+/* Designs for all the verticle navigation bars */
+#top {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+    margin-right: 10px;
+}
+
+#top h1 {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+#side ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+}
+
+#side li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+/* Change the link color on hover */
+#side li a:hover {
+    background-color: #67a71c;
+    color: white;
+    transition: all 0.7s;
+}
+
+#top2 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+    border-top: 2px solid white;
+}
+
+#top2 h1 {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+#side2 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+}
+
+#side2 li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+/* Change the link color on hover */
+#side2 li a:hover {
+    background-color: #67a71c;
+    color: white;
+    transition: all 0.7s;
+}
+
+#top3 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+    border-top: 2px solid white;
+}
+
+#top3 h1 {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+#side3 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    width: 200px;
+    background-color: #234f00;
+    position: relative;
+}
+
+#side3 li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+/* Change the link color on hover */
+#side3 li a:hover {
+    background-color: #67a71c;
+    color: white;
+    transition: all 0.7s;
+}
+
+/* Designs for the main site area for each page */
+#text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+	font-size: 17px;
+    color: rgb(51, 51, 51);
+    background-color: #eff0f1;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    column-count: 1;
+    line-height: 1.5;
+}
+
+#text h1 {
+    font-family: 'Montserrat', sans-serif;
+	font-weight: 900;
+    color: black;
+    font-size: 17px;
+    padding-top: 20px;
+}
+
+#text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 0;
+    color: black;
+    font-size: 15px;
+}
+
+#text strong {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 0;
+    color: black;
+}
+
+#text ol {
+    padding-left: 30px;
+}
+#text ul {
+    padding-left: 30px;
+}
+
+#text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: black;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+#bio {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    color: rgb(51, 51, 51);
+    background-color: #eff0f1;
+    text-align: left;
+    padding: 20px;
+    margin-top: -73px;
+    margin-right: 10%;
+    margin-left: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#bio2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    color: rgb(51, 51, 51);
+    background-color: #eff0f1;
+    text-align: left;
+    padding: 20px;
+    margin-top: -73px;
+    margin-right: 10%;
+    margin-left: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#calculate {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+    background-color: #eff0f1;
+    text-align: left;
+    padding: 20px;
+    margin-top: 330px;
+    margin-right: 180px;
+    margin-left: 180px;
+}
+
+#calender figure{
+    margin: 10px 5px 10px 5px;
+    padding: 5px 0 5px 0;
+    border-top: 1px dotted grey;
+    border-bottom: 1px dotted grey;
+    color: grey;
+    text-align: center;
+}
+
+#video {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+/* Navbar styling: use Bootstrap 5 classes (navbar-dark + bg-dark) in the template; avoid custom overrides here */
