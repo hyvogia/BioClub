@@ -1,9 +1,11 @@
 /Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/BioClubApplication.java
+/Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/config/DataLoader.java
 /Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/config/WebConfig.java
 /Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/controller/GameApiController.java
 /Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/controller/HomeController.java
 /Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/model/LeaderboardEntry.java
+/Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/model/Question.java
 /Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/model/Score.java
 /Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/repository/LeaderboardRepository.java
+/Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/repository/QuestionRepository.java
 /Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/repository/ScoreRepository.java
-/Users/hyvo/Documents/GitHub/BioClub/src/main/java/com/hy/BioClub/service/GameService.java
