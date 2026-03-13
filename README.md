@@ -2,10 +2,6 @@
 
 Repository: BioClub — web application (Spring Boot + Thymeleaf)
 
-## Visual
-
-<img src="screencapture.png">
-
 ## System Overview
 
 Purpose: Quiz Platform for NCEA Level 2 Biology.
@@ -74,3 +70,25 @@ cd BioClub
 ./mvnw clean package
 java -jar target/BioClub-0.0.1-SNAPSHOT.jar
 ```
+
+## Recent additions (summary)
+
+- Admin dashboard: visit `/admin` to manage site text and content.
+	- Edit navigation title, the index H1 (HTML allowed) and index paragraph.
+	- CRUD for Games and YouTube lists (add / edit / delete entries).
+- Standards management:
+	- Add/edit/delete individual standards (via UI).
+	- "Delete All" button on home page removes all standards.
+- Templates refactor:
+	- `fragments/head.html` and `fragments/header.html` created and used by `index.html`, `games.html`, and `youtube.html`.
+	- `index.html`, `games.html`, `youtube.html` now render dynamic content via services (`SiteConfigService`, `GamesService`, `YoutubeService`).
+- YouTube page uses a Bootstrap 5 carousel populated from the `YoutubeService` list; admin controls manage the list.
+- UI tweaks:
+	- Admin avatar added to navbar linking to `/admin`.
+	- Carousel control icons set to dark for light backgrounds (see `src/main/resources/static/css/style.css`).
+
+## Visual
+
+<img src="screencapture.png">
+
+<img src="screencapture-admin.png">

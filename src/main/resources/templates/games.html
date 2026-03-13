@@ -1,88 +1,20 @@
 <!doctype html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="BioClub">
-    <meta name="keywords" content="biology, bio, level 2">
-    <meta name="author" content="Hy Vo">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BioClub</title>
-    <link rel="icon" th:href="@{/img/favicon.ico}" href="/img/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous">
-    <link th:href="@{/css/style.css}" href="/css/style.css" rel="stylesheet" type="text/css">
-</head>
+<head th:replace="~{fragments/head :: head}"></head>
 
 <body>
-    <div class="text-bg-dark collapse" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4>About</h4>
-                    <p class="text-white">Was a small web development project for year 12 back at KVC.</p>
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4>Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="https://x.com/hyvo01" class="text-white">Follow on X</a></li>
-                        <!-- <li><a href="#" class="text-white">Like on Facebook</a></li> -->
-                        <li><a href="mailto:vogiahy@gmail.com" class="text-white">Email me</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" th:fragment="navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" th:href="@{/}" href="/">
-                <img th:src="@{/img/favicon-32x32.png}" src="/img/favicon-32x32.png" alt="BioClub logo" width="32"
-                    height="32" class="me-2">
-                BioClub
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!-- Unit Standards removed -->
-                    <li class="nav-item"><a class="nav-link" th:href="@{/games.html}" href="/games.html">Games</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/youtube.html}" href="/youtube.html">YouTube</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navbarHeader" aria-expanded="false">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div th:replace="~{fragments/header :: header}"></div>
 
     <div id="box1">
         <h1>Mini Games</h1>
     </div>
     <section class="container my-5" id="advanced-games">
         <div class="list-group">
-            <div class="list-group-item">
-                <h3>Foldit</h3>
-                <p>Protein-folding puzzle that teaches structural biology and contributes to real research.</p>
-                <p><a href="https://fold.it" target="_blank" rel="noopener">Play Foldit (original)</a></p>
-            </div>
-            <div class="list-group-item">
-                <h3>Eterna</h3>
-                <p>RNA design game where students learn RNA structure and participate in crowdsourced experiments.</p>
-                <p><a href="https://eternagame.org" target="_blank" rel="noopener">Play Eterna</a></p>
-            </div>
-            <div class="list-group-item">
-                <h3>Phylo</h3>
-                <p>Multiple sequence alignment game teaching comparative genomics and alignment principles.</p>
-                <p><a href="http://phylo.cs.mcgill.ca/" target="_blank" rel="noopener">Play Phylo (original)</a></p>
-            </div>
-            <div class="list-group-item">
-                <h3>Immune Attack (HHMI BioInteractive)</h3>
-                <p>A 3D exploration game that explores cell biology and the immune system at an advanced level.</p>
-                <p><a href="https://www.hhmi.org/biointeractive/immune-attack" target="_blank" rel="noopener">Play
-                        Immune Attack</a></p>
+            <div th:each="g,stat : ${games}" class="list-group-item">
+                <h3 th:text="${g.title}">Game Title</h3>
+                <p th:text="${g.description}">Description</p>
+                <p><a th:href="${g.url}" target="_blank" rel="noopener" th:text="${g.buttonLabel ?: 'Play Game'}">Play Game</a></p>
             </div>
         </div>
     </section>

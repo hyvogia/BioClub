@@ -1,63 +1,10 @@
 <!doctype html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="BioClub">
-    <meta name="keywords" content="biology, bio, level 2">
-    <meta name="author" content="Hy Vo">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BioClub</title>
-    <link rel="icon" th:href="@{/img/favicon.ico}" href="/img/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link th:href="@{/css/style.css}" href="/css/style.css" rel="stylesheet" type="text/css">
-    <!-- Moved inline styles to /css/style.css -->
-</head>
+<head th:replace="~{fragments/head :: head}"></head>
 
 <body>
-    <div class="text-bg-dark collapse" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4>About</h4>
-                    <p class="text-white">Was a small web development project for year 12 back at KVC.</p>
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4>Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="https://x.com/hyvo01" class="text-white">Follow on X</a></li>
-                        <!-- <li><a href="#" class="text-white">Like on Facebook</a></li> -->
-                        <li><a href="mailto:vogiahy@gmail.com" class="text-white">Email me</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" th:fragment="navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" th:href="@{/}" href="/">
-                <img th:src="@{/img/favicon-32x32.png}" src="/img/favicon-32x32.png" alt="BioClub logo" width="32"
-                    height="32" class="me-2">
-                BioClub
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!-- Unit Standards removed -->
-                    <li class="nav-item"><a class="nav-link" th:href="@{/games.html}" href="/games.html">Games</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/youtube.html}" href="/youtube.html">YouTube</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navbarHeader" aria-expanded="false">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div th:replace="~{fragments/header :: header}"></div>
 
     <section class="position-relative overflow-hidden"
         th:style="'min-height:60vh; background: url(' + @{/img/plants.jpg} + ') center center / cover no-repeat;'">
@@ -66,15 +13,12 @@
         <div class="container position-relative z-1">
             <div class="row align-items-center" style="min-height:60vh;">
                 <div class="col-md-8 col-lg-5 text-white text-start fade-in-up">
-                    <h1 class="fw-semibold lh-1 mb-4" style="font-size: clamp(3rem, 7vw, 4rem);">
-                        Welcome To
-                        <br>
-                        <span class="fw-bold text-white">Biology</span>
-                        <span class="fw-bold" style="color: #9bd46a;">200</span>
+                    <h1 class="fw-semibold lh-1 mb-4" style="font-size: clamp(3rem, 7vw, 4rem);" th:utext="${indexHeading}">
+                        <!-- Heading rendered via admin: indexHeading -->
                     </h1>
 
-                    <p class="fs-4 mb-4" style="max-width: 760px;">
-                        Study with AI or custom Flashcard.
+                    <p class="fs-4 mb-4" style="max-width: 760px;" th:text="${indexParagraph}">
+                        <!-- Paragraph rendered via admin: indexParagraph -->
                     </p>
 
 
