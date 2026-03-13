@@ -7,96 +7,109 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.hy.BioClub.model.GameEntry;
+import com.hy.BioClub.model.YoutubeEntry;
+import com.hy.BioClub.service.GamesService;
 import com.hy.BioClub.service.SiteConfigService;
+import com.hy.BioClub.service.YoutubeService;
 
 @Controller
 public class AdminController {
+    private final SiteConfigService siteConfigService;
+    private final GamesService gamesService;
+    private final YoutubeService youtubeService;
+
+    public AdminController(SiteConfigService siteConfigService, GamesService gamesService, YoutubeService youtubeService) {
+        this.siteConfigService = siteConfigService;
+        this.gamesService = gamesService;
+        this.youtubeService = youtubeService;
+    }
 
     @GetMapping("/admin")
     public String admin(Model model) {
-        model.addAttribute("navTitle", SiteConfigService.getNavTitle());
-        model.addAttribute("indexHeading", SiteConfigService.getIndexHeading());
-        model.addAttribute("indexParagraph", SiteConfigService.getIndexParagraph());
-        model.addAttribute("games", com.hy.BioClub.service.GamesService.getGames());
-        model.addAttribute("youtubeList", com.hy.BioClub.service.YoutubeService.getVideos());
+        model.addAttribute("navTitle", siteConfigService.getNavTitle());
+        model.addAttribute("indexHeading", siteConfigService.getIndexHeading());
+        model.addAttribute("indexParagraph", siteConfigService.getIndexParagraph());
+        model.addAttribute("games", gamesService.getGames());
+        model.addAttribute("youtubeList", youtubeService.getVideos());
         return "admin";
     }
 
     @PostMapping("/admin/setNavTitle")
     public String setNavTitle(@RequestParam("navTitle") String title) {
-        SiteConfigService.setNavTitle(title);
+        siteConfigService.setNavTitle(title);
         return "redirect:/admin";
     }
 
     @PostMapping("/admin/resetNavTitle")
     public String resetNavTitle() {
-        SiteConfigService.resetNavTitle();
+        siteConfigService.resetNavTitle();
         return "redirect:/admin";
     }
 
     @PostMapping("/admin/setIndexHeading")
     public String setIndexHeading(@RequestParam("indexHeading") String heading) {
-        SiteConfigService.setIndexHeading(heading);
+        siteConfigService.setIndexHeading(heading);
         return "redirect:/admin";
     }
 
     @PostMapping("/admin/resetIndexHeading")
     public String resetIndexHeading() {
-        SiteConfigService.resetIndexHeading();
+        siteConfigService.resetIndexHeading();
         return "redirect:/admin";
     }
 
     @PostMapping("/admin/setIndexParagraph")
     public String setIndexParagraph(@RequestParam("indexParagraph") String p) {
-        SiteConfigService.setIndexParagraph(p);
+        siteConfigService.setIndexParagraph(p);
         return "redirect:/admin";
     }
 
     // Games CRUD
     @PostMapping("/admin/games/add")
     public String addGame(@RequestParam String title, @RequestParam String description, @RequestParam String url) {
-        com.hy.BioClub.model.GameEntry g = new com.hy.BioClub.model.GameEntry(title, description, url, "Play Game");
-        com.hy.BioClub.service.GamesService.add(g);
+        GameEntry g = new GameEntry(title, description, url, "Play Game");
+        gamesService.add(g);
         return "redirect:/admin#games";
     }
 
     @PostMapping("/admin/games/edit/{idx}")
     public String editGame(@PathVariable("idx") int idx, @RequestParam String title, @RequestParam String description, @RequestParam String url) {
-        com.hy.BioClub.model.GameEntry g = new com.hy.BioClub.model.GameEntry(title, description, url, "Play Game");
-        com.hy.BioClub.service.GamesService.update(idx, g);
+        GameEntry g = new GameEntry(title, description, url, "Play Game");
+        gamesService.update(idx, g);
         return "redirect:/admin#games";
     }
 
     @PostMapping("/admin/games/delete/{idx}")
     public String deleteGame(@PathVariable("idx") int idx) {
-        com.hy.BioClub.service.GamesService.delete(idx);
+        gamesService.delete(idx);
         return "redirect:/admin#games";
     }
 
     // YouTube CRUD
     @PostMapping("/admin/youtube/add")
     public String addYoutube(@RequestParam String title, @RequestParam String description, @RequestParam String url) {
-        com.hy.BioClub.model.YoutubeEntry v = new com.hy.BioClub.model.YoutubeEntry(title, description, url, "Watch");
-        com.hy.BioClub.service.YoutubeService.add(v);
+        YoutubeEntry v = new YoutubeEntry(title, description, url, "Watch");
+        youtubeService.add(v);
         return "redirect:/admin#youtube";
     }
 
     @PostMapping("/admin/youtube/edit/{idx}")
     public String editYoutube(@PathVariable("idx") int idx, @RequestParam String title, @RequestParam String description, @RequestParam String url) {
-        com.hy.BioClub.model.YoutubeEntry v = new com.hy.BioClub.model.YoutubeEntry(title, description, url, "Watch");
-        com.hy.BioClub.service.YoutubeService.update(idx, v);
+        YoutubeEntry v = new YoutubeEntry(title, description, url, "Watch");
+        youtubeService.update(idx, v);
         return "redirect:/admin#youtube";
     }
 
     @PostMapping("/admin/youtube/delete/{idx}")
     public String deleteYoutube(@PathVariable("idx") int idx) {
-        com.hy.BioClub.service.YoutubeService.delete(idx);
+        youtubeService.delete(idx);
         return "redirect:/admin#youtube";
     }
 
     @PostMapping("/admin/resetIndexParagraph")
     public String resetIndexParagraph() {
-        SiteConfigService.resetIndexParagraph();
+        siteConfigService.resetIndexParagraph();
         return "redirect:/admin";
     }
 }

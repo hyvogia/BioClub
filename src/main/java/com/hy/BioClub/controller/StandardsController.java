@@ -13,6 +13,12 @@ import com.hy.BioClub.service.StandardsService;
 @Controller
 public class StandardsController {
 
+    private final StandardsService standardsService;
+
+    public StandardsController(StandardsService standardsService) {
+        this.standardsService = standardsService;
+    }
+
     @GetMapping("/standards/add")
     public String addForm(Model model) {
         model.addAttribute("standard", new StandardCard());
@@ -21,13 +27,13 @@ public class StandardsController {
 
     @PostMapping("/standards/add")
     public String addSubmit(@ModelAttribute StandardCard standard) {
-        StandardsService.add(standard);
+        standardsService.add(standard);
         return "redirect:/";
     }
 
     @GetMapping("/standards/edit/{idx}")
     public String editForm(@PathVariable("idx") int idx, Model model) {
-        StandardCard s = StandardsService.get(idx);
+        StandardCard s = standardsService.get(idx);
         model.addAttribute("standard", s);
         model.addAttribute("index", idx);
         return "edit-standard";
@@ -35,19 +41,19 @@ public class StandardsController {
 
     @PostMapping("/standards/edit/{idx}")
     public String editSubmit(@PathVariable("idx") int idx, @ModelAttribute StandardCard standard) {
-        StandardsService.update(idx, standard);
+        standardsService.update(idx, standard);
         return "redirect:/";
     }
 
     @GetMapping("/standards/deleteAll")
     public String deleteAll() {
-        StandardsService.deleteAll();
+        standardsService.deleteAll();
         return "redirect:/";
     }
 
     @GetMapping("/standards/delete/{idx}")
     public String delete(@PathVariable("idx") int idx) {
-        StandardsService.delete(idx);
+        standardsService.delete(idx);
         return "redirect:/";
     }
 }

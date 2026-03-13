@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hy.BioClub.model.Question;
 import com.hy.BioClub.model.Score;
+import com.hy.BioClub.repository.QuestionRepository;
 import com.hy.BioClub.repository.ScoreRepository;
 
 @RestController
@@ -19,9 +21,9 @@ import com.hy.BioClub.repository.ScoreRepository;
 public class GameApiController {
 
     private final ScoreRepository scores;
-    private final com.hy.BioClub.repository.QuestionRepository questions;
+    private final QuestionRepository questions;
 
-    public GameApiController(ScoreRepository scores, com.hy.BioClub.repository.QuestionRepository questions) {
+    public GameApiController(ScoreRepository scores, QuestionRepository questions) {
         this.scores = scores;
         this.questions = questions;
     }
@@ -53,7 +55,7 @@ public class GameApiController {
 
     @GetMapping("/questions/random")
     public ResponseEntity<String> randomQuestion(){
-        List<com.hy.BioClub.model.Question> list = questions.findAll();
+        List<Question> list = questions.findAll();
         if(list.isEmpty()) return ResponseEntity.noContent().build();
         int idx = (int)(Math.random()*list.size());
         return ResponseEntity.ok(list.get(idx).getText());
